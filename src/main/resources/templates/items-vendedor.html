@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" th:href="@{/output.css}">
+</head>
+<body>
+    <div class="layout-grid">
+        <!-- Sección de categorías (1/4) -->
+        <aside class="layout-left">
+            <div class="card">
+                <h2 class="section-title">Categorías</h2>
+                <ul class="categoria-list">
+                    <!-- Iterar sobre las categorías de itemsPorCategoria -->
+                    <li th:each="entry : ${itemsPorCategoria}">
+                        <a class="text cursor-pointer hover:text-blue-500" 
+                            th:href="'#' + ${entry.key}" 
+                            th:text="${entry.key}"></a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Sección de productos (2/4) -->
+        <main class="layout-center">
+            <div th:each="entry : ${itemsPorCategoria}" 
+                    class="category-group"
+                    th:id="${entry.key}">
+                <!-- Título de la categoría -->
+                <h2 class="section-title" th:text="${entry.key}"></h2>
+
+                <!-- Lista de productos -->
+                <div class="grid-container">
+                    <div th:each="itemMenu : ${entry.value}" class="card pr-20">
+                        <h3 class="title" th:text="${itemMenu.nombre}"></h3>
+                        <p class="text" th:text="${itemMenu.descripcion}"></p>
+                        <p class="price" th:text="'$' + ${itemMenu.precio}"></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sección derecha vacía (1/4) -->
+        <aside class="layout-right">
+            <!-- Espacio reservado -->
+        </aside>
+    </div>
+</body>
+</html>

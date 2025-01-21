@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Vendedores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" th:href="@{/output.css}">
+</head>
+<body >
+    <div class="layout-grid">
+        <aside class="layout-left">
+            <!-- Espacio reservado -->
+        </aside>
+
+        <!-- Columna central (2/4) -->
+        <div class="layout-center flex-grow">
+            <!-- Buscador -->
+            <div class="flex justify-center mb-6">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Buscar vendedores..."
+                    class="search-input"
+                />
+            </div>
+
+            <!-- Lista de Vendedores -->
+            <div id="vendedoresList" >
+                <a th:each="vendedor : ${vendedores}"
+                    class="card pl-20 pr-10 block" 
+                    style="cursor: pointer;"
+                    th:href="@{/item-menu/{id}(id=${vendedor.id})}">
+                    <h2 class="title" th:text="${vendedor.nombre}"></h2>
+                    <p class="text" th:text="${vendedor.direccion}"></p>
+                </a>
+            </div>
+        </div>
+
+        <aside class="layout-right">
+            <!-- Espacio reservado -->
+        </aside>
+</div>
+</body>
+</html>

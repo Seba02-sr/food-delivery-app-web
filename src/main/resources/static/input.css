@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  /* Layout de 3 columnas (1/4 - 2/4 - 1/4) */
+  .layout-grid {
+    @apply grid grid-cols-4 gap-4 h-full;
+  }
+
+  /* Columna izquierda y derecha (1/4) */
+  .layout-left, .layout-right {
+    @apply col-span-1 bg-gray-100 p-8 rounded-lg shadow-md;
+  }
+
+  /* Columna central (2/4) */
+  .layout-center {
+    @apply col-span-2 bg-white p-8 rounded-lg shadow-md flex-grow;
+  }
+
+  /* Títulos de secciones */
+  .section-title {
+    @apply text-lg font-semibold text-gray-900 mb-4;
+  }
+
+  /* Clase para listas */
+  .categoria-list {
+    @apply space-y-2 mt-4;
+  }
+
+  /* Agrupación por categoría */
+  .category-group {
+    @apply mb-8;
+  }
+
+  /* Contenedor de tarjetas */
+  .grid-container {
+    @apply grid grid-cols-2 gap-4;
+  }
+
+  /* Tarjeta de producto */
+  .card {
+    @apply bg-white rounded-lg p-6 mb-6 border border-gray-300 shadow-lg transition-all hover:bg-gray-100 hover:shadow-xl;
+  }
+
+  /* Título en tarjeta */
+  .title {
+    @apply text-lg font-semibold text-gray-900;
+  }
+
+  /* Descripción en tarjeta */
+  .text {
+    @apply text-sm text-gray-500;
+  }
+
+  /* Precio del producto */
+  .price {
+    @apply text-lg font-semibold text-green-500;
+  }
+
+  /* Buscador */
+  .search-input {
+    @apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-300;
+  }
+
+  
+}

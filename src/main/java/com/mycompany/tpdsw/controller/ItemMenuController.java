@@ -37,6 +37,7 @@ public class ItemMenuController {
         return ResponseEntity.ok(items);
     }
 
+    // Thyemeleaf
     @GetMapping("/{id}")
     public String mostrarItemMenuPorVendedorId(@PathVariable Integer id, Model model) {
         List<ItemMenuDto> items = itemMenuService.findActiveByIdVendedor(id);

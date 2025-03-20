@@ -49,7 +49,7 @@ public class ClienteController {
 
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody ClienteDto clienteDto) throws URISyntaxException {
-        if (!clienteDto.getId().equals(null)) {
+        if (clienteDto.getId() != null) {
             return ResponseEntity.badRequest().build();
         }
         clienteService.save(clienteDto);

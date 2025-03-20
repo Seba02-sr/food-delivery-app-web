@@ -16,6 +16,7 @@ public class PedidoDto {
     private Integer clienteId;
     private Integer id;
     private Estado estado;
-    private PagoDto formaPagoDto;
+    private Integer formaPagoDtoId;
+    private List<PedidoItemPedidoDto> pedidoItemPedidosDto;
 
 }

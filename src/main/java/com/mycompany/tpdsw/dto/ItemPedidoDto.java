@@ -14,6 +14,6 @@ public class ItemPedidoDto {
 
     private Integer id;
     private Integer cantidad;
-    private ItemMenuDto itemMenuDto;
+    private Integer itemMenuDtoId;
 
 }

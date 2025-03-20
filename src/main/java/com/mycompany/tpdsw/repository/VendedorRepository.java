@@ -18,7 +18,7 @@ public interface VendedorRepository extends JpaRepository<Vendedor, Integer> {
         // Busca vendedor que contenga el nombre
         @Query("FROM Vendedor v " +
                         "WHERE v.activo = true " +
-                        "AND LOWER(v.nombre) LIKE :nombre")
+                        "AND LOWER(v.nombre) LIKE CONCAT('%', :nombre, '%')")
         public List<Vendedor> findActiveByNombre(@Param("nombre") String nombre);
 
         // Busca vendedores activos y trae consigo los item del mismo

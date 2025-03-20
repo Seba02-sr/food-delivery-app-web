@@ -13,16 +13,16 @@ import com.mycompany.tpdsw.model.ItemMenu;
 @Repository
 public interface BebidaRepository extends JpaRepository<Bebida, Integer> {
 
-    @Query("FROM Bebida p WHERE p.activo = true")
-    public List<ItemMenu> findAllActive();
+        @Query("FROM Bebida p WHERE p.activo = true")
+        public List<ItemMenu> findAllActive();
 
-    @Query("FROM Bebida b " +
-            "WHERE b.id = :id " +
-            "AND b.activo = true")
-    public Bebida findActiveBebidaById(@Param("id") Integer id);
+        @Query("FROM Bebida b " +
+                        "WHERE b.id = :id " +
+                        "AND b.activo = true")
+        public Bebida findActiveBebidaById(@Param("id") Integer id);
 
-    @Query("FROM Bebida b " +
-            "WHERE b.activo = true " +
-            "AND b.vendedor.id = :idVendedor")
-    public List<Bebida> findActiveByIdVendedor(@Param("idVendedor") Integer idVendedor);
+        @Query("FROM Bebida b " +
+                        "WHERE b.activo = true " +
+                        "AND b.vendedor.id = :idVendedor")
+        public List<Bebida> findActiveByIdVendedor(@Param("idVendedor") Integer idVendedor);
 }

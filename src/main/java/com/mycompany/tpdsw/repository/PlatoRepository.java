@@ -12,14 +12,14 @@ import com.mycompany.tpdsw.model.Plato;
 @Repository
 public interface PlatoRepository extends JpaRepository<Plato, Integer> {
 
-    @Query("FROM Plato p " +
-            "WHERE p.id = :id " +
-            "AND p.activo = true")
-    public Plato findActivePlatoById(Integer id);
+        @Query("FROM Plato p " +
+                        "WHERE p.id = :id " +
+                        "AND p.activo = true")
+        public Plato findActivePlatoById(Integer id);
 
-    @Query("FROM Plato p " +
-            "WHERE p.activo = true " +
-            "AND p.vendedor.activo = true " +
-            "AND p.vendedor.id = :id")
-    List<Plato> findActiveByIdVendedor(@Param("id") Integer id);
+        @Query("FROM Plato p " +
+                        "WHERE p.activo = true " +
+                        "AND p.vendedor.activo = true " +
+                        "AND p.vendedor.id = :id")
+        List<Plato> findActiveByIdVendedor(@Param("id") Integer id);
 }

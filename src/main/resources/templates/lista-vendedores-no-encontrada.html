@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" th:href="@{/output.css}">
+</head>
+<body>
+
+    
+    <!-- Botón para volver a la página principal -->
+    <div class="p-4">
+        <button onclick="window.location.href='/vendedores/list'" 
+                class="flex items-center font-bold text-lg">
+            <span class="text-2xl mr-2">←</span> Volver a Inicio
+        </button>
+    </div>
+    <div class="layout-grid">
+        <aside class="layout-left">
+            <!-- Espacio reservado -->
+        </aside>
+
+        <!-- Columna central (2/4) -->
+        <div class="layout-center empty-state">
+            <p class="empty-text">No se han encontrado Vendedores</p>
+            <img th:src="@{/image/no-data.png}" alt="No data" class="empty-image">
+        </div>
+
+        <aside class="layout-right">
+            <!-- Espacio reservado -->
+        </aside>
+    </div>
+
+</body>
+</html>

@@ -4,6 +4,8 @@ INSERT INTO coordenada (id, latitud, longitud) VALUES (2, 34.0522, -118.2437);
 INSERT INTO coordenada (id, latitud, longitud) VALUES (3, 41.8781, -87.6298);
 INSERT INTO coordenada (id, latitud, longitud) VALUES (4, 29.7604, -95.3698);
 INSERT INTO coordenada (id, latitud, longitud) VALUES (5, 39.7392, -104.9903);
+INSERT INTO coordenada (id, latitud, longitud) VALUES (6, 37.7749, -122.4194);
+INSERT INTO coordenada (id, latitud, longitud) VALUES (7, 33.4484, -112.0740);
 
 -- Insertar datos en la tabla 'categorias'
 INSERT INTO categoria (id, nombre, descripcion, tipo_categoria) VALUES (1, 'Bebida Con Alcohol', 'Esta bebida es con alcohol, prohibido su consumo en menores', 'BEBIDA');
@@ -121,3 +123,10 @@ INSERT INTO plato (id, apto_celiaco, apto_vegano, apto_vegetariano, calorias, pe
 INSERT INTO plato (id, apto_celiaco, apto_vegano, apto_vegetariano, calorias, peso) VALUES (37, 1, 0, 0, 250.0, 200);
 INSERT INTO plato (id, apto_celiaco, apto_vegano, apto_vegetariano, calorias, peso) VALUES (38, 1, 1, 0, 80.0, 200);
 INSERT INTO plato (id, apto_celiaco, apto_vegano, apto_vegetariano, calorias, peso) VALUES (39, 1, 0, 1, 230.0, 200);
+
+
+-- Insertar datos en la tabla 'cliente'
+INSERT INTO cliente (id, activo, coordenada_Id, fecha_eliminacion, fecha_registro, direccion, nombre, cuit, email) VALUES (1, 1, 7, NULL, CURDATE(), 'Calle Falsa 123', 'Homero Simpson', '20-12345678-9', 'homero@example.com');
+
+-- Insertar datos en la tabla 'pago'
+INSERT INTO Pago (id, fecha, monto, tipo_pago, alias, cbu, cuit) VALUES (1, CURDATE(), 300.00, 'Transferencia', 'Alias1', '1234567890', '20-12345678-9');

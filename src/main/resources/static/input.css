@@ -41,7 +41,7 @@
 
   /* Tarjeta de producto */
   .card {
-    @apply bg-white rounded-lg p-6 mb-6 border border-gray-300 shadow-lg transition-all hover:bg-gray-100 hover:shadow-xl;
+    @apply bg-white rounded-lg p-6 mb-6 border border-gray-300 shadow-lg transition-all hover:bg-gray-100 hover:shadow-xl ;
   }
 
   /* Título en tarjeta */
@@ -61,8 +61,28 @@
 
   /* Buscador */
   .search-input {
-    @apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-300;
+    @apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-300 flex-1;
   }
+
+  .form-search {
+    @apply flex space-x-2 w-[80%]
+  }
+
+  /* Contenedor centrado para el mensaje de no datos */
+  .empty-state {
+    @apply flex flex-col items-center justify-center text-center h-full;
+  }
+
+  /* Mensaje de texto gris */
+  .empty-text {
+    @apply text-gray-500 text-lg mb-4;
+  }
+
+  /* Imagen con tamaño reducido */
+  .empty-image {
+    @apply w-24 h-auto;
+  }
+
 
   
 }

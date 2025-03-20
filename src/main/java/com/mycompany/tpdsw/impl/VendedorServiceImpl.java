@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.mycompany.tpdsw.controller.VendedorController;
 import com.mycompany.tpdsw.dto.VendedorDto;
 import com.mycompany.tpdsw.exception.VendedorNoEncontradoException;
 import com.mycompany.tpdsw.mapper.VendedorMapper;
@@ -16,6 +18,8 @@ import com.mycompany.tpdsw.service.VendedorService;
 
 @Service
 public class VendedorServiceImpl implements VendedorService {
+
+    private static final Logger logger = org.slf4j.LoggerFactory.getLogger(VendedorController.class);
 
     @Autowired
     private VendedorRepository vendedorRepository;
@@ -64,6 +68,7 @@ public class VendedorServiceImpl implements VendedorService {
     public List<VendedorDto> findByNombre(String nombre) throws VendedorNoEncontradoException {
         List<Vendedor> vendedores = vendedorRepository.findActiveByNombre(nombre);
 
+        logger.info("Vendedores encontrados: " + vendedores);
         if (vendedores.isEmpty()) {
             throw new VendedorNoEncontradoException("Vendedor " + nombre + " no encontrado");
         }

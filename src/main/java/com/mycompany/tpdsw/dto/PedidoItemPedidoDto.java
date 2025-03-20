@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 public class PedidoItemPedidoDto {
 
     private Integer id;
-    private PedidoDto pedidoDto;
+    private Integer pedidoDtoId;
     private ItemPedidoDto itemPedidoDto;
 }

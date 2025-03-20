@@ -1,5 +1,7 @@
 package com.mycompany.tpdsw.dto;
 
+import java.util.List;
+
 import com.mycompany.tpdsw.model.Estado;
 
 import lombok.AllArgsConstructor;

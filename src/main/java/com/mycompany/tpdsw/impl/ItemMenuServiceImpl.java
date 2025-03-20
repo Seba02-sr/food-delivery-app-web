@@ -27,4 +27,10 @@ public class ItemMenuServiceImpl implements ItemMenuService {
         return items.stream().map(itemMenuMapper::mapToDto).collect(Collectors.toList());
     }
 
+    @Override
+    public ItemMenuDto findActiveById(Integer id) {
+        ItemMenu item = itemMenuRepository.findByIdAndActivo(id);
+        return itemMenuMapper.mapToDto(item);
+    }
+
 }

@@ -8,7 +8,6 @@ import com.mycompany.tpdsw.model.Coordenada;
 import lombok.Builder;
 
 @Builder
-
 @Component
 public class CoordenadaMapper implements Mapper<Coordenada, CoordenadaDto> {
 

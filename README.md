@@ -4,7 +4,9 @@
 
 ## Descripción
 
-Este proyecto es una aplicación de pedidos en línea, similar a "Pedidos Ya", donde los usuarios pueden realizar pedidos de productos a diferentes restaurantes. La plataforma permite a los usuarios ver los menús, seleccionar productos y realizar el pedido de manera sencilla. La aplicación está construida con Spring Boot para el backend, Thymeleaf para el frontend y MySQL como base de datos.
+Este proyecto consiste en una aplicación de pedidos en línea, similar a "Pedidos Ya", que permite a los usuarios realizar pedidos de productos en distintos restaurantes. La plataforma facilita la visualización de menús, la selección de productos y la realización de pedidos de manera sencilla.
+
+Se trata de un prototipo de backend que incluye pruebas visuales de algunas funcionalidades clave del servicio de pedidos. Las pruebas de los endpoints se encuentran en el archivo "foodDelivery.postman_collection.json".
 
 ## Tecnologías, Frameworks y APIs
 
@@ -35,6 +37,13 @@ Este proyecto es una aplicación de pedidos en línea, similar a "Pedidos Ya", d
 3. Ejecuta el proyecto utilizando Maven:
     ```bash
     mvn spring-boot:run
+
+## Prueba de Pedido por Postman
+Para realizar prueba de pedidos en Postman, ejecute las siguientes solicitudes en el orden indicado:
+
+1. "Guardar Pedido"
+2. "Actualizar Pedido ACEPTADO"
+3. "Actualizar Pedido PAGADO"
 
 ## Licencia
 Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.

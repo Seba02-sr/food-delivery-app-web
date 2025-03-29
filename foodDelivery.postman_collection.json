@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "d1cd14ca-0a2a-4a5a-b9d0-8f4b3b1782e3",
+		"name": "foodDelivery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "42044015"
+	},
+	"item": [
+		{
+			"name": "Borrar Vendedor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/vendedores/delete/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Vendedor",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"nombre\": \"Pepito\",\n    \"direccion\": \"otra direccion\",\n    \"coordenadaDto\": {\n        \"id\": 1,\n        \"latitud\": -34.6037,\n        \"longitud\": -84.3816\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vendedores/update/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Vendedor por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/vendedores/find/5"
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Todos Vendedores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/vendedores/findAll"
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar Vendedor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nombre\": \"Juan Fernando\",\n  \"direccion\": \"Av. Principal 123\",\n  \"coordenadaDto\": {\n    \"latitud\": -34.6037,\n    \"longitud\": -58.3816\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vendedores/save"
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Todos Clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/clientes/findAll"
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/clientes/find/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Cliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 1,\n  \"nombre\": \"Lionel Messi\",\n  \"cuit\": \"20-12345678-9\",\n  \"direccion\": \"Calle Falsa 123\",\n  \"email\": \"segundoFrancia@example.com\",\n  \"coordenadaDto\": {\n    \"id\": 7,\n    \"latitud\": 33.4484,\n    \"longitud\": -112.074\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/clientes/update/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Ana Gómez\",\n    \"cuit\": \"27-87654321-0\",\n    \"direccion\": \"Groove Street 123\",\n    \"email\": \"ana@example.com\",\n    \"coordenadaDto\": {\n        \"latitud\": -34.6167,\n        \"longitud\": -58.4444\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/clientes/save"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Cliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/clientes/delete/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar Pedido",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clienteId\": 1,\r\n    \"estado\": \"RECIBIDO\",\r\n    \"pedidoItemPedidosDto\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/pedidos/save"
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Pedido ACEPTADO",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"pedidoItemPedidosDto\": [\r\n        {\r\n            \"pedidoDtoId\": 1,\r\n            \"itemPedidoDto\": {\r\n                \"cantidad\": 2,\r\n                \"itemMenuDtoId\": 1\r\n            }\r\n        },\r\n        {\r\n            \"pedidoDtoId\": 1,\r\n            \"itemPedidoDto\": {\r\n                \"cantidad\": 1,\r\n                \"itemMenuDtoId\": 1 \r\n            }\r\n        }\r\n    ],\r\n    \"estado\": \"ACEPTADO\",\r\n    \"clienteId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/pedidos/update/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Pedido PAGADO",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"estado\": \"PAGADO\",\r\n    \"formaPagoDtoId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/pedidos/update/1"
+			},
+			"response": []
+		}
+	]
+}
